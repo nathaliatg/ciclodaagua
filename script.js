@@ -204,7 +204,18 @@ function finalizarJogo(tempoEsgotado = false) {
 
 function reiniciarJogo() {
     telaFinal.classList.remove('ativa');
-    telaInicial.classList.add('ativa');
+    telaJogo.classList.add('ativa');
+
+    pontuacao = 0;
+    acertos = 0;
+    pontuacaoSpan.textContent = pontuacao;
+
+    if (jogoData) {
+        renderizarJogo();
+        iniciarTemporizador();
+    } else {
+        console.error('Dados do jogo ainda não foram carregados!');
+    }
 }
 
 function voltarParaInicio() {
