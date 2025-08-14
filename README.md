@@ -5,6 +5,10 @@
 ## Visão Geral
 Jogo educativo sobre o **Ciclo da Água**. A **lógica de conteúdo** é separada e carregada via **`jogo.json`** (texto não é fixo no código). O projeto foi construído utilizando HTML, CSS e JavaScript puros, com foco em interatividade pedagógica, layout responsivo e uma estrutura de código escalável.
 
+O projeto pode ser visualizado no [Github Pages](https://nathaliatg.github.io/ciclodaagua/)!
+
+![Prévia](https://i.imgur.com/TasyrWY.gif)
+
 ## Funcionalidades
 - Tela inicial com título, instruções e botão **Iniciar**.
 - 4 alvos (Evaporação, Condensação, Precipitação, Infiltração).
