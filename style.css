@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --bg-background: #fafafa;
+    --bg-card: #ffffff;
+    --text-primary: #2e9af3;
+    --text-muted: #6c757d;
+    --shadow-elegant: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --gradient-playful: linear-gradient(135deg, #2d99f3 0%, #c3e7fb 100%);
+    --gradient-primary: linear-gradient(to right, #2e9af3, 
+#41cfef);
+    --cor-sucesso: #28a745;
+    --cor-erro: #dc3545;
+    --sombra-card: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-background);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.tela {
+    display: none;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+/* Header */
+.header-intro {
+    padding: 3rem 0;
+}
+.nav-intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.capitulo {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+/* Banner de Introdução */
+.banner-intro {
+    background: var(--gradient-playful);
+    border-radius: 1rem; /* 16px */
+    overflow: hidden;
+    text-align: center;
+    box-shadow: var(--shadow-elegant);
+}
+.banner-conteudo {
+    padding: 4rem 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(8px);
+}
+.banner-conteudo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+}
+.banner-conteudo .titulo-gradiente {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.banner-conteudo p {
+    color: var(--text-muted);
+    max-width: 48rem; /* 768px */
+    margin: 0 auto 2rem;
+}
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Botões */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.5rem; /* 8px */
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-primary {
+    background-color: var(--text-primary);
+    color: #fff;
+    padding: 1rem 2rem;
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.btn-ghost {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 2px solid transparent;
+}
+.btn-ghost:hover {
+    background-color: #c3e7fb;
+}
+
+/* Seção de Instruções */
+.instrucoes {
+    margin-top: 4rem;
+}
+.texto-instrucoes {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.texto-instrucoes h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+.texto-instrucoes p {
+    color: var(--text-muted);
+}
+.cards-instrucoes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+.cards-instrucoes .card {
+    flex: 1;
+    background-color: var(--bg-card);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-elegant);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.2s;
+    margin-bottom: 2rem;
+}
+.cards-instrucoes .card:hover {
+    transform: scale(1.03);
+}
+.cards-instrucoes .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.cards-instrucoes .card-icone {
+    font-size: 3rem;
+}
+.cards-instrucoes .card-numero {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 9999px;
+    background: var(--gradient-primary);
+    display: grid;
+    place-content: center;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #fff;
+}
+.cards-instrucoes .card-body h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.cards-instrucoes .card-body p {
+    color: var(--text-muted);
+}
+.cards-instrucoes .seta {
+    display: none;
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+@media (min-width: 768px) {
+    .cards-instrucoes {
+        flex-direction: row;
+    }
+    .cards-instrucoes .seta {
+        display: block;
+    }
+}
+
+
+/* Estilos da Tela do Jogo */
+.game-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem 0;
+border-bottom: 1px solid #ddd;
+margin-bottom: 2rem;
+}
+
+.game-header h1 {
+font-size: 1.5rem;
+}
+
+.game-header .header-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+}
+.placar, .timer {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+.placar span, .timer span {
+    color: #333;
+    font-weight: 700;
+}
+
+.btn-sair {
+background-color: transparent;
+color: var(--text-muted);
+border: 1px solid #ddd;
+padding: 0.5rem 1rem;
+}
+.btn-sair:hover {
+background-color: #f0f0f0;
+}
+
+.jogo-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.coluna-alvos {
+    flex: 1;
+    min-width: 300px;
+}
+.coluna-opcoes {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.coluna-alvos h3, .coluna-opcoes h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.alvos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 1rem;
+}
+
+.alvo {
+    background-color: var(--bg-card);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem; 
+    min-height: 120px; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.alvo.dragover {
+    border-color: var(--text-primary);
+    background-color: #e9f0ff;
+}
+
+.nome-etapa {
+    font-size: 1.2rem; 
+    font-weight: 700; 
+    color: #333; 
+    margin-bottom: 0.5rem; 
+}
+
+.alvo.acerto {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #333; 
+    border-color: var(--cor-sucesso);
+    box-shadow: none;
+    cursor: default;
+}
+
+.alvo.acerto .nome-etapa {
+    color: var(--cor-sucesso); 
+}
+
+.descricao-acertada {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #555; 
+}
+
+.opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; 
+}
+
+.opcao {
+    background-color: var(--bg-card);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem; 
+    cursor: grab;
+    transition: box-shadow 0.2s, opacity 0.2s, border-color 0.2s;
+    text-align: left;
+    box-shadow: var(--sombra-card);
+}
+
+.opcao:active {
+    cursor: grabbing;
+}
+
+.opcao.arrastando {
+    opacity: 0.5;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.opcao.acerto {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #555;
+    border-color: var(--cor-sucesso);
+    cursor: default;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.opcao.erro {
+    border-color: var(--cor-erro);
+    animation: shake 0.3s;
+}
+
+@keyframes shake {
+0% { transform: translateX(0); }
+25% { transform: translateX(-5px); }
+50% { transform: translateX(5px); }
+75% { transform: translateX(-5px); }
+100% { transform: translateX(0); }
+}
+
+#tela-final {
+    display: none;
+    place-content: center; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(248, 249, 250, 0.8);
+    z-index: 100;
+}
+#tela-final.ativa {
+    display: grid;
+}
+#tela-final .modal {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: var(--shadow-elegant);
+    animation: fade-in 0.5s ease-out;
+    text-align: center;
+    max-width: 450px; 
+}
+.titulo-final {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.mensagem-final {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+.info-final {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+.info-final span {
+    color: #333;
+    font-weight: 700;
+}
+.botoes-finais {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .jogo-container {
+        flex-direction: column;
+    }
+    .cards-instrucoes {
+        flex-direction: column;
+    }
+    .cards-instrucoes .seta {
+        display: none;
+    }
+    .cards-instrucoes .card {
+        width: 100%;
+    }
+}

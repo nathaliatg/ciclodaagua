@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo: Ciclo da Água</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <div id="tela-inicial" class="tela ativa">
+            <header class="header-intro">
+                <nav class="nav-intro">
+                    <span class="capitulo">Capítulo 3</span>
+                    </nav>
+            </header>
+            <section class="banner-intro">
+                <div class="banner-conteudo">
+                    <h1>
+                        <span class="titulo-gradiente">Jogo: Ciclo da Água</span>
+                    </h1>
+                    <p>
+                        Arraste as descrições e solte nos nomes corretos. Ganhe pontos a cada acerto!
+                    </p>
+                    <div class="botoes">
+                        <button id="btn-iniciar" class="btn btn-primary">
+                            Iniciar
+                        </button>
+                        <button id="btn-como-funciona" class="btn btn-ghost">
+                            Como funciona
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="instrucoes" aria-label="Como funciona">
+                <div class="texto-instrucoes">
+                    <h2>Como funciona?</h2>
+                    <p>Siga estes 3 passos simples</p>
+                </div>
+                
+                <div class="cards-instrucoes">
+                    <article class="card">
+                        <div class="card-header">
+                            <div class="card-icone">🌟</div>
+                            <div class="card-numero">1</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Arraste</h3>
+                            <p>Pegue um bloco de descrição.</p>
+                        </div>
+                    </article>
+
+                    <div class="seta">→</div>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <div class="card-icone">🧲</div>
+                            <div class="card-numero">2</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Solte</h3>
+                            <p>Solte sobre o nome da etapa correspondente.</p>
+                        </div>
+                    </article>
+
+                    <div class="seta">→</div>
+
+                    <article class="card">
+                        <div class="card-header">
+                            <div class="card-icone">🎯</div>
+                            <div class="card-numero">3</div>
+                        </div>
+                        <div class="card-body">
+                            <h3>Pontue</h3>
+                            <p>Cada acerto vale 1 ponto. Conclua todas as etapas!</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+        
+        <div id="tela-jogo" class="tela">
+    <header class="game-header">
+        <h1 id="jogo-titulo">Ciclo da Água</h1>
+        <div class="header-info">
+            <span class="placar">Pontuação: <span id="pontuacao">0</span> / <span id="total-alvos"></span></span>
+            <span class="timer">Tempo: <span id="temporizador">0s</span></span>
+            <button class="btn btn-secondary btn-sair">Sair</button>
+        </div>
+    </header>
+
+    <section class="jogo-container">
+        <div class="coluna-alvos">
+            <h3>Etapas do Ciclo da Água</h3>
+            <div id="alvos-container" class="alvos-container">
+                </div>
+        </div>
+        <div class="coluna-opcoes">
+            <h3>Arraste as descrições</h3>
+            <div id="opcoes-container" class="opcoes-container">
+                </div>
+        </div>
+    </section>
+</div>
+
+        <div id="tela-final" class="tela">
+    <div class="modal">
+        <h2 class="titulo-final">Parabéns!</h2>
+        <p class="mensagem-final">Você concluiu o jogo do ciclo da água.</p>
+        <div class="info-final">
+            <p>Pontuação: <span id="pontuacao-total">0</span>/<span id="total-alvos-final">0</span></p>
+            <p>Tempo: <span id="tempo-total">0s</span></p>
+        </div>
+        <div class="botoes-finais">
+            <button id="btn-reiniciar" class="btn btn-primary">Jogar novamente</button>
+            <button id="btn-voltar-inicio" class="btn btn-ghost">Voltar ao início</button>
+        </div>
+    </div>
+</div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
