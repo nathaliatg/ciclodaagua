@@ -1,4 +1,4 @@
-# Jogo Educativo — Ciclo da Água
+# Jogo Educativo: Ciclo da Água
 
 [![Stack](https://img.shields.io/badge/HTML5%20CSS3%20JavaScript-0A84FF)]()
 
